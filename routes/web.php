@@ -18,6 +18,10 @@ Route::get('/kategori', [AppController::class, 'showAllCategory'])->name('showAl
 Route::get('/loker', [AppController::class, 'showAllJob'])->name('showAllJobs');
 Route::get('/loker/{slug}', [AppController::class, 'show'])->name('show');
 
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
+
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('auth.login');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login.post');
@@ -33,9 +37,9 @@ Route::middleware(['auth', 'role:employer'])->prefix('employer')->name('employer
 
     Route::put('/profile/update/{user}', [EmployerController::class, 'update'])->name('profile.update');
 
-    Route::resource('/jobs', JobManageController::class);
+    Route::resource('/company', CompanyManageController::class)->names('company');
 
-    Route::resource('/company', CompanyManageController::class);
+    Route::resource('/jobs', JobManageController::class);
 
     Route::get('/settings', [EmployerController::class, 'settings'])->name('settings');
 
