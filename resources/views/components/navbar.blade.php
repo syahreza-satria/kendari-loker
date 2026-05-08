@@ -9,7 +9,7 @@
         <ul class="menu menu-horizontal items-center">
             @guest
                 <li><a href=""></a></li>
-                <li><a href="{{ route('auth.login') }}">Masuk ke akun</a></li>
+                <li><a href="{{ route('auth.login') }}" class="rounded-selector">Masuk ke akun</a></li>
             @endguest
             @auth
                 <li>
@@ -37,10 +37,12 @@
                                 <div class="divider my-0 mx-0"></div>
                             @elseif(Auth::user()->role === 'admin')
                                 <li>
-                                    <a href="{{ route('admin.dashboard.index') }}" class="rounded-selector">
-                                        Dashboard Admin
+                                    <a href="{{ route('admin.dashboard.index') }}" class="rounded-selector gap-1">
+                                        <i data-feather="grid" class="size-4"></i>
+                                        Dashboard
                                     </a>
                                 </li>
+                                <div class="divider my-0 mx-0"></div>
                             @endif
                             <li>
                                 <form action="{{ route('auth.logout') }}" method="POST" class=" rounded-selector">
