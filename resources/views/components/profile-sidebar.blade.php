@@ -7,7 +7,7 @@
                 <img src="{{ Auth::user()->avatar
                     ? asset('storage/' . Auth::user()->avatar)
                     : 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name) }}"
-                    alt="{{ Auth::user()->name }}" class="size-10 rounded-full">
+                    alt="{{ Auth::user()->name }}" class="size-10 object-cover rounded-full">
                 <span class="font-semibold">{{ Auth::user()->name }}</span>
             </div>
         </li>
