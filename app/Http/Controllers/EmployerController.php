@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EmployerController extends Controller
@@ -40,13 +38,6 @@ class EmployerController extends Controller
         $user->update($validated);
 
         return redirect()->route('employer.profile')->with('success', 'Data diri berhasil diperbarui!');
-    }
-
-    public function company()
-    {
-        $company = Company::where('user_id', Auth::id())->first();
-
-        return view('employer.company.index', compact('company'));
     }
 
     public function settings()

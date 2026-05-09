@@ -157,7 +157,7 @@
                     </label>
 
                     {{-- Social Account (LinkedIn) --}}
-                    <label class="form-control w-full">
+                    <label class="form-control w-full md:col-span-2">
                         <span class="text-sm">Profil LinkedIn / Sosial Media (URL)</span>
                         <input type="url" name="social_account" value="{{ $employer->social_account }}"
                             class="input input-bordered w-full rounded-selector"
@@ -175,7 +175,9 @@
                 <div class="modal-action mt-6">
                     <button type="button" class="btn btn-ghost rounded-selector"
                         onclick="document.getElementById('edit_data_{{ $employer->id }}').close()">Batal</button>
-                    <button type="submit" class="btn btn-primary rounded-selector px-6">Simpan Perubahan</button>
+                    <button type="submit" class="btn btn-primary rounded-selector px-6">
+                        <i data-feather="save" class="size-4"></i>Simpan Perubahan
+                    </button>
                 </div>
             </form>
         </div>
