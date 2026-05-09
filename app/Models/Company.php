@@ -14,10 +14,12 @@ class Company extends Model
     protected $fillable = [
         'user_id',
         'name',
+        'slug',
+        'sector',
         'description',
         'address',
         'logo',
-        'website',
+        'social_link',
     ];
 
     public function user(): BelongsTo
