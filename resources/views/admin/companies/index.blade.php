@@ -44,9 +44,10 @@
                                 </div>
                             </td>
                             <td>{{ $company->name }}</td>
+                            <td>{{ $company->sector }}</td>
                             <td>{{ $company->description }}</td>
                             <td>{{ $company->address }}</td>
-                            <td>{{ $company->website }}</td>
+                            <td>{{ $company->social_link }}</td>
                             <td>
                                 <div class="flex gap-2 justify-center">
                                     <div class="tooltip" data-tip="Lihat Informasi">
