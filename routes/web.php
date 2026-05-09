@@ -39,7 +39,7 @@ Route::middleware(['auth', 'role:employer'])->prefix('employer')->name('employer
 
     Route::resource('/company', CompanyManageController::class)->names('company');
 
-    Route::resource('/jobs', JobManageController::class);
+    Route::resource('/jobs', JobManageController::class)->names('jobs');
 
     Route::get('/settings', [EmployerController::class, 'settings'])->name('settings');
 

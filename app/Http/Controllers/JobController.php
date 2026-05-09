@@ -25,22 +25,6 @@ class JobController extends Controller
         return view('admin.jobs.index', compact('jobs', 'companies', 'categories', 'types'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Job $job)
-    {
-        //
-    }
-
     public function update(Request $request, Job $job)
     {
         $validated = $request->validate([
