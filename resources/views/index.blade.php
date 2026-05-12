@@ -3,6 +3,7 @@
     <x-hero :types="$types" :categories="$categories" />
 
     <div class="bg-white space-y-12 pb-16 px-4 md:px-0">
+        {{-- Category --}}
         <section class="space-y-4">
             <div class="flex justify-between items-center gap-2">
                 <h2 class="text-lg md:text-xl font-bold text-nowrap">Kategori Lowongan</h2>
@@ -32,6 +33,7 @@
             </div>
         </section>
 
+        {{-- Newest Jobs --}}
         <section class="space-y-4">
             <div class="flex justify-between items-center gap-2">
                 <h2 class="text-lg md:text-xl font-bold">Lowongan Terbaru</h2>

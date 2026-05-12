@@ -45,12 +45,19 @@ class AppController extends Controller
 
     public function show($slug)
     {
-        $job = Job::with(['company', 'category'])
+        $job = Job::with(['company', 'category', 'type'])
             ->where('slug', $slug)
             ->where('is_active', true)
             ->firstOrFail();
 
-        return view('show', compact('job'));
+        // Rekomendasi Tambahan: Ambil pekerjaan terkait (opsional)
+        $relatedJobs = Job::where('category_id', $job->category_id)
+            ->where('id', '!=', $job->id)
+            ->where('is_active', true)
+            ->limit(3)
+            ->get();
+
+        return view('show', compact('job', 'relatedJobs'));
     }
 
     public function showAllCategory()
